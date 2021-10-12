@@ -34,12 +34,12 @@ while (restartGame){
         rangeNum = parseInt(rangeNum);
     }
     
-    ramdonNum = Math.floor(Math.random() * rangeNuM)+ 1 ;
+    ramdomNum = Math.floor(Math.random() * rangeNuM)+ 1 ;
 
     attempts = parseInt(prompt(`Please enter a number of attempts allowed:`));
 
     while (!attempts || attempts < 1){
-        attemps = parseInt(promt(enterNumText));
+        attempts = parseInt(prompt(enterNumText));
     }
     
 
@@ -51,14 +51,32 @@ while (restartGame){
         guess = parseInt(guess);
         
         while (!guess || guess < 1 || guess > rangeNum){
-            guess = parseInt(promt(`Please Enter a number from 1 to ${rangeNum}`));
+            guess = parseInt(prompt(`Please Enter a number from 1 to ${rangeNum}`));
         }
         
 
         attempts--;
         
+        if (guess === randomNum){
+            alert (`CONGRATULATIONS YOU GUESSED THE CORRECT NUMBER: ${randomNum}`);
+            break;
         
-        break;
+        } else if (attempts === 0){
+            alert(`Sorry, but you have run out of attempts. The number was ${randomNum}`);
+
+            break;
+        }
+         else if (guess < randomNum){
+             guess = prompt (`Too low. You have ${attempts} 
+             attempts(s) left`);
+        
+        } else{
+            guess = prompt(`Too high. you have ${attempts} attempts left`);
+        }
+
+
+        
+        
     }
     
     break;
