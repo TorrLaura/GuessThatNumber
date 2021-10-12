@@ -34,8 +34,15 @@ while (restartGame){
         rangeNum = parseInt(rangeNum);
     }
     
-    ramdonNum = Math.floor(Math. random() * rangeNuM)+ 1 ;
+    ramdonNum = Math.floor(Math.random() * rangeNuM)+ 1 ;
 
+    attempts = parseInt(prompt(`Please enter a number of attempts allowed:`));
+
+    while (!attempts || attempts < 1){
+        attemps = parseInt(promt(enterNumText));
+    }
+    
+    
     break;
 }
 
