@@ -42,6 +42,24 @@ while (restartGame){
         attemps = parseInt(promt(enterNumText));
     }
     
+
+    guess = prompt (`Please enter a guess from 1 to ${rangeNum}. You have ${attempts} attempt(s) left:`);
+
+    while (true){
+        
+        // Attempts to convert the users guess into a number
+        guess = parseInt(guess);
+        
+        while (!guess || guess < 1 || guess > rangeNum){
+            guess = parseInt(promt(`Please Enter a number from 1 to ${rangeNum}`));
+        }
+        
+
+        attempts--;
+        
+        
+        break;
+    }
     
     break;
 }
